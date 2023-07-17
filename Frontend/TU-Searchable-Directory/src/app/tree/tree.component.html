@@ -1,7 +1,0 @@
-<div class="container" *ngIf="!this.select">
-    <p-tree [value]="files" selectionMode="single" [(selection)]="selectedFile" (onNodeSelect)="onNodeSelect($event)"></p-tree>
-</div>
-<div class="container" *ngIf="this.select">
-    <app-info-card [node]="this.selectedFile"></app-info-card>
-</div>
-

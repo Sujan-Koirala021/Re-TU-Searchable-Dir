@@ -1,0 +1,36 @@
+<div class="container card">
+    <div class="row justify-content-center">
+        <div class="col-12">
+            <p class="title"> {{ org.name }} </p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-6">
+            <div class="container" style="padding: 10px;">
+                
+                <div class="row" *ngFor = "let personnel of org.info.personnel">
+                    <div class="col-4">
+                        {{ personnel.title }}
+                    </div>
+                    <div class="col-8">
+                        {{ personnel.name }}
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-6">
+            <div class="container" style="padding: 10px;" *ngIf = "org.info.programmes">
+                <div class="row justify-content-center">
+                    <div class="col-6">
+                        <p class="sub-title"> Programs </p>
+                    </div>
+                </div>
+                <div class="row" *ngFor = "let program of org.info.programmes">
+                    <div class="col-8">
+                        {{ program.name }}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

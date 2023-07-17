@@ -1,0 +1,61 @@
+<div class="container justify-content-center card my-5">
+  <div class="row justify-content-center">
+    <div class="col-6 form-group">
+      <form #authForm="ngForm">
+        <div class="form-group my-3" *ngIf="!this.isLogin">
+          <label for="name">Name</label>
+          <input class="form-control" type="text" name="name" ngModel required>
+        </div>
+        <div class="form-group my-3">
+          <label for="email">Email</label>
+          <input class="form-control" type="email" name="email" ngModel email required>
+        </div>
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input class="form-control" type="password" name="password" ngModel password required minlength="6">
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div class="row justify-content-center" *ngIf="this.isLogin">
+    <div class="col-2 form-group">
+      <button type="submit" class="btn btn-primary login-btn" (click)="onLogIn(authForm)">Login</button>
+    </div>
+  </div>
+  <div class="row justify-content-center" *ngIf="this.isLogin">
+    <div class="col-4">
+      <hr>
+    </div>
+  </div>
+  <div class="row justify-content-center" *ngIf="this.isLogin">
+    <div class="col-3 form-group">
+      <button type="button" class="btn btn-primary create-account-btn" (click)="onCreate()">
+        Sign Up
+      </button>
+    </div>
+  </div>
+
+  <div class="row justify-content-center" *ngIf="!this.isLogin">
+    <div class="col-2 form-group">
+      <button type="submit" class="btn btn-primary signup-btn" (click)="onSignUp(authForm)">Signup</button>
+    </div>
+  </div>
+  <div class="row justify-content-center" *ngIf="!this.isLogin">
+    <div class="col-4">
+      <hr>
+    </div>
+  </div>
+  <div class="row justify-content-center" *ngIf="!this.isLogin">
+    <div class="col-3 form-group">
+      <button type="button" class="btn btn-primary login-to-account-btn" (click)="onCreate()">
+        Login to your Account
+      </button>
+    </div>
+  </div>
+  <div class="row justify-content-center" *ngIf="this.hasError">
+    <div class="col-3 error">
+      <p class="error-text" style="margin-bottom: 0;">{{ this.errorText }}</p>
+    </div>
+  </div>
+</div>

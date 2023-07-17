@@ -1,0 +1,54 @@
+/* auth-form.component.css */
+
+/* ... (previous styles) ... */
+
+/* Style for login and signup buttons */
+.login-btn,
+.signup-btn,
+.create-account-btn,
+.login-to-account-btn {
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: background-color 0.2s; /* Add a smooth transition effect */
+}
+
+.login-btn {
+  background-color: #007bff;
+  color: #fff;
+}
+
+.signup-btn {
+  background-color: #28a745;
+  color: #fff;
+}
+
+.create-account-btn,
+.login-to-account-btn {
+  background-color: #14a37f;
+  color: #fff;
+}
+
+/* Hover styles for buttons */
+.login-btn:hover,
+.signup-btn:hover,
+.create-account-btn:hover,
+.login-to-account-btn:hover {
+  opacity: 0.9; /* Slightly reduce opacity on hover for a subtle effect */
+}
+
+/* Adjusted width for buttons */
+.login-btn,
+.signup-btn {
+  width: 100%; /* Buttons will now take full width of the container */
+  max-width: 200px; /* Limit the maximum width of the buttons */
+}
+
+.create-account-btn,
+.login-to-account-btn {
+  width: 100%;
+  max-width: 250px;
+}

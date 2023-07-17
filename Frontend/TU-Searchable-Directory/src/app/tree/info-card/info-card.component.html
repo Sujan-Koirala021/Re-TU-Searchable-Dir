@@ -1,0 +1,49 @@
+<div class="body">
+    <div class="container" style="margin-top: 20px;">
+      <div class="row justify-content-center">
+        <div class="col">
+            <div class="container card">
+                <div class="row">
+                    <div class="col-12" style="justify-content: center;">
+                        {{ node.label }}
+                    </div>
+                </div>
+                <div class="row" *ngIf="node.data.personnel">
+                    <div class="col-12">
+                        Personnel
+                    </div>
+                </div>
+                <hr>
+                <div class="row" *ngFor="let personnel of node.data.personnel">
+                    <div class="col-5">
+                        <form >
+                            <input type = "text" id = "name" class="form-control" ngModel name="name" [placeholder]="personnel.name">
+                            <input type = "text" id = "title" class="form-control" ngModel name="title" [placeholder]="personnel.title">
+                            <input type = "text" id = "imageUrl" class="form-control" ngModel name="imageUrl" [placeholder]="personnel.imageUrl">
+                        </form>
+                        <hr>
+            
+                    </div>
+                    <div class="col-auto">
+                        <img [src]="personnel.imageUrl" class="picture">
+                    </div>
+                </div>  
+                <div class="row" *ngIf="node.data.programmes">
+                    <div class="col-12">
+                        Programmes
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <form *ngFor="let program of node.data.programmes">
+                            <input type = "text" id = "name" class="form-control" ngModel name="name" [placeholder]="program.name">
+                            <textarea id = "desc" class="form-control" ngModel name="desc" [placeholder]="program.description"></textarea>
+                        <hr>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+      </div>
+    </div>
+

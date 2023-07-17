@@ -1,0 +1,14 @@
+
+<div class="body">
+    <div class="container" style="margin-top: 20px;">
+        <div class="row justify-content-center">
+            <div class="col">
+                <div class="container" *ngIf="!this.select">
+                    <p-tree [value]="files" selectionMode="single" [(selection)]="selectedFile" (onNodeSelect)="onNodeSelect($event)"></p-tree>
+                </div>
+                <div class="container" *ngIf="this.select">
+                    <app-info-card [node]="this.selectedFile"></app-info-card>
+                </div>
+        </div>
+      </div>
+    </div>
